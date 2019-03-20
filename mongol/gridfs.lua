@@ -23,6 +23,8 @@ function gridfs_mt:find_one(fields)
                     file_size = r.length;
                     file_md5 = r.md5;
                     file_name = r.filename;
+                    content_type = r.contentType;  -- optional
+                    meta_data = r.metadata;        -- optional
                     }, gridfs_file)
 end
 
@@ -75,6 +77,8 @@ function gridfs_mt:new(meta)
                     file_size = 0;
                     file_md5 = 0;
                     file_name = meta.filename;
+                    content_type = meta.contentType;  -- optional
+                    meta_data = meta.metadata;        -- optional
                     }, gridfs_file)
 end
 
